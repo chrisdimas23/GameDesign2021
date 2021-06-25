@@ -30,7 +30,7 @@ y = 10
 Wbox = 30
 dist = 10
 
-AS = pygame.image.load("spacePictures/asteroid.jpg")
+AS = pygame.image.load("spacePictures/asteroid1.png")
 
 clock = pygame.time.Clock()
 
@@ -144,12 +144,12 @@ def level1():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 check = False
-        pygame.draw.rect(screen, red, rect_1)
+        screen.blit(AS, (dropX, 10))
         pygame.display.update()
-        rect_1.y += speed
-        screen.blit(BG, (0,0))
+        AS.y += speed
+        
         pygame.display.update()
-        if rect_1.y > HEIGHT - hBox: break
+        if AS.y > HEIGHT - hBox: break
 def level2():
     check = True
     while check:
